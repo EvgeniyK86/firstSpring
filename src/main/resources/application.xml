@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                             http://www.springframework.org/schema/beans/spring-beans.xsd
+                             http://www.springframework.org/schema/context
+                             http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <context:property-placeholder location="classpath:application.properties"/>
+    <context:annotation-config></context:annotation-config>
+
+    <!-- <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+         <property name="locations" value="classpath:application.properties"/>
+     </bean>-->
+    <!--<bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+
+    <bean name="userDto" class="by.itacademy.spring.dto.CreateUserDto" scope="prototype"/>
+    <bean name="userMap" class="by.itacademy.spring.mapper.CreateUserMapper">
+        <constructor-arg name="createUserDto" ref="userDto"/>
+    </bean>
+
+    <bean id="userRepo1" name="r1, r2, r3" class="by.itacademy.spring.database.repository.UserRepository"
+          init-method="init" destroy-method="destroy">
+        <!--<property name="url" value="asd"/>
+        <property name="username" value="${db.username}"/>-->
+        <constructor-arg name="username" value="${db.username}"/>
+        <constructor-arg name="url" value="postgres:5433"/>
+        <constructor-arg name="poolSize" value="10"/>
+        <constructor-arg name="args">
+            <list>
+                <value>value1</value>
+                <value>value2</value>
+                <value>value3</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg name="properties">
+            <map>
+                <entry key="url" value="postgres"/>
+                <entry key="pwd" value="1234"/>
+            </map>
+        </constructor-arg>
+    </bean>
+    <bean name="userServ" class="by.itacademy.spring.service.UserService">
+        <constructor-arg name="createUserMapper" ref="userMap"/>
+        <constructor-arg name="userRepository" ref="userRepo1"/>
+
+    </bean>
+</beans>
