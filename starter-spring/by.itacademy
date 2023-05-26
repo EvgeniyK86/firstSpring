@@ -14,3 +14,8 @@
 2023-05-26T20:22:40.307+03:00  INFO 11052 --- [Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
 2023-05-26T20:25:48.357+03:00  INFO 25828 --- [Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
 2023-05-26T20:25:48.363+03:00  INFO 25828 --- [Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
+2023-05-26T20:30:44.764+03:00  INFO 22308 --- [Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
+2023-05-26T20:30:44.769+03:00  INFO 22308 --- [Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
+2023-05-26T20:30:45.985+03:00  INFO 22308 --- [Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
+2023-05-26T20:37:21.192+03:00  INFO 9292 --- [Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
+2023-05-26T20:37:22.143+03:00  INFO 9292 --- [Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
