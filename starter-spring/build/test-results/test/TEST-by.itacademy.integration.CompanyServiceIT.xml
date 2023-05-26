@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="by.itacademy.integration.CompanyServiceIT" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-05-26T17:25:48" hostname="KALV-15-06" time="0.854">
+  <properties/>
+  <testcase name="findById()" classname="by.itacademy.integration.CompanyServiceIT" time="0.854"/>
+  <system-out><![CDATA[
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+JpaConfiguration is enabled
+2023-05-26T20:25:48.357+03:00  INFO 25828 --- [    Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
+2023-05-26T20:25:48.363+03:00  INFO 25828 --- [    Test worker] b.i.spring.database.pool.ConnectionPool  : Init pool
+findById method...
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
