@@ -1,31 +1,31 @@
 plugins {
+    id "io.freefair.lombok" version "8.0.1"
+    id 'org.springframework.boot' version '3.1.0'
+    id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
 }
 
 group 'by.itacademy'
 version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    compileOnly 'org.projectlombok:lombok:1.18.26'
-    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'org.postgresql:postgresql'
 
-    testCompileOnly 'org.projectlombok:lombok:1.18.26'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
-
-    implementation 'org.springframework:spring-core:6.0.6'
-
-    implementation 'org.springframework:spring-context:6.0.6'
-
-    implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
 
 }
 
 test {
     useJUnitPlatform()
 }
+

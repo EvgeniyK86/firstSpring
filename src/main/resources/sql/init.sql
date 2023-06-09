@@ -1,4 +1,4 @@
-CREATE DATABASE postgres1;
+
 
 CREATE TABLE IF NOT EXISTS public.company
 (
@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS public.company
 
 CREATE TABLE IF NOT EXISTS public.company_locales
 (
-    company_id INT REFERENCES company (id),
+    company_id INT REFERENCES company (id) ON DELETE CASCADE,
     lang VARCHAR(2),
     description VARCHAR(255) NOT NULL ,
     PRIMARY KEY (company_id, lang)
@@ -22,14 +22,14 @@ CREATE TABLE IF NOT EXISTS public.users
     firstname VARCHAR(64),
     lastname VARCHAR(64),
     role VARCHAR(32),
-    company_id INT REFERENCES company (id)
+    company_id INT REFERENCES company (id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS public.payment
 (
     id BIGSERIAL PRIMARY KEY ,
     amount INT NOT NULL ,
-    receiver_id BIGINT NOT NULL REFERENCES users (id)
+    receiver_id BIGINT NOT NULL REFERENCES users (id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS public.chat

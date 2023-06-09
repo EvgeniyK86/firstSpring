@@ -21,14 +21,14 @@ public class GreetingController {
         return Arrays.asList(Role.values());
     }*/
 
-    @GetMapping("/hello")
+    /*@GetMapping("/hello")
     public ModelAndView hello(ModelAndView mv) {
         mv.setViewName("greeting/hello");
         mv.addObject("user", new UserReadDto(1L, "Andrei"));
         return mv;
-    }
+    }*/
 
-    @GetMapping("/hello/{id}")
+    /*@GetMapping("/hello/{id}")
     public ModelAndView hello2(ModelAndView mv,
                                @RequestParam Integer age,
                                @RequestHeader String accept,
@@ -37,7 +37,7 @@ public class GreetingController {
         mv.setViewName("greeting/hello");
         mv.addObject("user", new UserReadDto(1L, "Andrei"));
         return mv;
-    }
+    }*/
 
     @GetMapping("/bye")
     public ModelAndView bye(ModelAndView mv,
