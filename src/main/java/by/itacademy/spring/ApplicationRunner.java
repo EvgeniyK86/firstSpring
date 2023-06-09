@@ -1,18 +1,23 @@
 package by.itacademy.spring;
 
-import by.itacademy.spring.database.repository.UserRepository;
-import by.itacademy.spring.dto.CreateUserDto;
-import by.itacademy.spring.ioc.Container;
-import by.itacademy.spring.mapper.CreateUserMapper;
-import by.itacademy.spring.service.UserService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import by.itacademy.spring.database.properties.DatabaseProperties;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
+import org.springframework.core.SpringProperties;
+
+
+@SpringBootApplication
+@ConfigurationPropertiesScan
 public class ApplicationRunner {
     public static void main(String[] args) {
-        var contex = new ClassPathXmlApplicationContext("application.xml");
-        var userRepository = contex.getBean("userRepo1", UserRepository.class);
-        System.out.println(userRepository);
-        contex.close();
+        var context = SpringApplication.run(ApplicationRunner.class, args);
+        var company = context.getBean("connectionPool");
+        System.out.println(SpringProperties.getProperty("test.message"));
+        System.out.println(company);
+        System.out.println(context.getBean(DatabaseProperties.class));
 
     }
 }
